@@ -12,7 +12,7 @@ import SignUp from "./components/Signup";
 import SingleProduct from "./components/SingleProduct";
 import Product from "./components/pages/Product";
 import axios from "axios";
-import { CART_URL } from "./components/URLS/url";
+import { CART_URL, CATEGORY_URL } from "./components/URLS/url";
 import Profile from "./components/Profile";
 import Password from "./components/Password";
 import OrderDetails from "./components/OrderDetail";
@@ -31,7 +31,7 @@ function App() {
     // localStorage.removeItem("token");
     if (!isStop) {
       axios
-        .get("http://localhost:8080/api/categories/find-all")
+        .get(`${CATEGORY_URL}/find-all`)
         .then((res) => {
           setCategorise(res.data.categories);
           setProvinces(res.data.provinces);
